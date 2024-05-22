@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: bisque;
 }
 
@@ -6,7 +9,6 @@ body {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  align-items: center;
   flex-wrap: wrap;
   width: 1000px;
 }
@@ -17,9 +19,11 @@ body {
   background-color: blueviolet;
   border: 5px solid rgb(70, 0, 70);
   border-radius: 10px;
+  transition: transform 2s;
 }
 
 .is-flipped {
   background-color: rgb(11, 183, 11);
   border: 5px solid rgb(1, 103, 1);
+  transform: rotateY(180deg);
 }
