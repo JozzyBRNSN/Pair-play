@@ -21,10 +21,10 @@ body {
   width: 200px;
   background-color: rgb(70, 0, 70);
   border-radius: 10px;
-  transition: transform .30s ease-in-out;
+  transition: background-color 0.5s, color 0.5s;
   font-size: 100px;
   font-weight: 900;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   color: transparent;
   cursor: pointer;
 }
@@ -36,5 +36,6 @@ body {
 
 .success {
   background-color: green;
+  color: white;
   transform: scale(90%);
 }
