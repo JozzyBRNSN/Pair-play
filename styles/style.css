@@ -5,7 +5,7 @@ body {
   background-color: bisque;
 }
 
-.container {
+.game {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -14,16 +14,24 @@ body {
 }
 
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 300px;
   width: 200px;
   background-color: blueviolet;
   border: 5px solid rgb(70, 0, 70);
   border-radius: 10px;
-  transition: transform 2s;
+  transition: transform .30s ease-in-out;
+  font-size: 100px;
+  font-weight: 900;
+  font-family: 'Courier New', Courier, monospace;
+  color: transparent;
+  cursor: pointer;
 }
 
-.is-flipped {
-  background-color: rgb(11, 183, 11);
-  border: 5px solid rgb(1, 103, 1);
-  transform: rotateY(180deg);
+.open {
+  background-color: rgb(236, 13, 199);
+  transform: scale(90%);
+  color: white;
 }
