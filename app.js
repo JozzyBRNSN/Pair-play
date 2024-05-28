@@ -1,4 +1,4 @@
-function newCard(number) {
+function newCard(number, action) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.textContent = number;
@@ -6,10 +6,17 @@ function newCard(number) {
 
   card.addEventListener("click", function () {
     card.classList.add("open");
+    action(card);
   });
 };
 
-newCard(1);
+// callback функция
+
+function flip(card) {
+  card.classList.add("success");
+}
+
+newCard(1, flip);
 newCard(2);
 newCard(3);
 newCard(4);

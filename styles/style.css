@@ -19,8 +19,7 @@ body {
   justify-content: center;
   height: 300px;
   width: 200px;
-  background-color: blueviolet;
-  border: 5px solid rgb(70, 0, 70);
+  background-color: rgb(70, 0, 70);
   border-radius: 10px;
   transition: transform .30s ease-in-out;
   font-size: 100px;
@@ -32,6 +31,10 @@ body {
 
 .open {
   background-color: rgb(236, 13, 199);
-  transform: scale(90%);
   color: white;
+}
+
+.success {
+  background-color: green;
+  transform: scale(90%);
 }
