@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   _open = false;
   _success = false;
 
@@ -6,6 +6,7 @@ class Card {
     this.card = document.createElement("div");
     this.card.classList.add("card");
     this.card.textContent = number;
+    this.number = number;
 
     this.card.addEventListener("click", () => {
       if (this.open === false && this.success === false) {
@@ -37,14 +38,9 @@ class Card {
   get success() {
     return this._success;
   }
-}
-
-let newCard = new Card(document.getElementById("game"), "1", flip);
-let newCard2 = new Card(document.getElementById("game"), "1", flip);
-let newCard3 = new Card(document.getElementById("game"), "1", flip);
-let newCard4 = new Card(document.getElementById("game"), "1", flip);
+};
 
 // callback функция
 function flip(card) {
-  console.log(card);
+  console.log(card.number);
 }
