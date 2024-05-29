@@ -1,12 +1,12 @@
-import Card from './game.js';
-
-let cardsCount = 8,
-    cardsNumberArray = [],
-    cardArray = [],
-    firstCard = null,
-    secondCard  = null
+import Card from "./game.js";
 
 function newGame(container, cardsCount) {
+  cardsCount = cardsCount;
+  let cardsNumberArray = [],
+      cardArray = [],
+      firstCard = null,
+      secondCard = null;
+  
   for (let i = 1; i <= cardsCount / 2; i++) {
     cardsNumberArray.push(i);
     cardsNumberArray.push(i);
@@ -20,31 +20,41 @@ function newGame(container, cardsCount) {
 
   function flip(card) {
     if (firstCard !== null && secondCard !== null) {
-      if (firstCard.number !== secondCard.number) {
+      if (firstCard.number != secondCard.number) {
         firstCard.open = false;
-        firstCard.open = false;
+        secondCard.open = false;
         firstCard = null;
-        firstCard = null;
+        secondCard = null;
       }
     }
 
-    if (firstCard === null) {
+    if (firstCard == null) {
       firstCard = card;
     } else {
-      if (secondCard === null) {
+      if (secondCard == null) {
         secondCard = card;
       }
     }
-  }
 
-  if (firstCard !== null && secondCard !== null) {
-    if (firstCard.number === secondCard.number) {
-      firstCard.success = true;
-      firstCard.success = true;
-      firstCard = null;
-      firstCard = null;
+    if (firstCard != null && secondCard != null) {
+      if (firstCard.number == secondCard.number) {
+        firstCard.success = true;
+        secondCard.success = true;
+        firstCard = null;
+        secondCard = null;
+      }
+    }
+
+    if (document.querySelectorAll(".card.success").length == cardsNumberArray.length) {
+      alert("You win!");
+      container.innerHTML = "";
+      cardsNumberArray = [],
+      cardArray = [],
+      firstCard = null,
+      secondCard = null;
+      newGame(container, cardsCount);
     }
   }
 }
 
-newGame(document.getElementById('game'), cardsCount);
+newGame(document.getElementById("game"), 8);

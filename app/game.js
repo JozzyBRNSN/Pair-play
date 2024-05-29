@@ -9,7 +9,7 @@ export default class Card {
     this.number = number;
 
     this.card.addEventListener("click", () => {
-      if (this.open === false && this.success === false) {
+      if (this.open== false && this.success === false) {
         this.open = true;
         action(this);
       }
@@ -40,7 +40,3 @@ export default class Card {
   }
 };
 
-// callback функция
-function flip(card) {
-  console.log(card.number);
-}
